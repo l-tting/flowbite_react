@@ -3,7 +3,7 @@ import { useState } from 'react'
 import axios from "axios"
 
 const SalesModal = ({ products }) => {
-    const url = "http://127.0.0.1:5000/sales"
+    const url = import.meta.env.REACT_API_SALES_URL
     const [salesdata, setSalesData] = useState({
         pid: "",
         quantity: "",
@@ -11,7 +11,7 @@ const SalesModal = ({ products }) => {
     const postSale = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.post(url, salesdata)
+            const response = await axios.post(url,salesdata)
             console.log("Response", response.data)
         }
         catch (error) {

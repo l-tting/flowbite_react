@@ -5,7 +5,8 @@ import ProductTable from "../Components/Tables/ProductTable"
 import axios from "axios"
 
 const Products = () => {
-   const url ="http://127.0.0.1:5000/products"
+   const url =import.meta.env.VITE_PRODUCTS_URL
+
    const [products,setProducts] =useState([])
    const fetchProducts = async ()=>{
     try{

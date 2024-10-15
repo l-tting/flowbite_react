@@ -4,12 +4,14 @@ import SalesTable from '../Components/Tables/SalesTable';
 import axios from "axios";
 
 const Sales = () => {
-    const url = "http://127.0.0.1:5000/"
+    const url = import.meta.env.VITE_API_SALES_URL;
+    const prods_url = import.meta.env.VITE_PRODUCTS_URL
+
     const [sales,setSales] = useState([])
     const [products,setProducts] =useState([])
     const fetchSales = async () =>{
         try{
-            const response = await axios.get(url + "sales")
+            const response = await axios.get(url)
             console.log("Sales",response.data)
             setSales(response.data.sales)
     }
@@ -21,7 +23,7 @@ const Sales = () => {
 
     const fetchProducts = async ()=>{
         try{
-            const response = await axios.get(url + "products")
+            const response = await axios.get(prods_url)
             console.log("products",response.data)
             setProducts(response.data.products)
 

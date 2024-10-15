@@ -4,7 +4,7 @@ import SimpleLineChart from '../Components/Charts/LineChart'
 import axios from "axios"
 
 const DashBoard = () => {
-    const url ='http://127.0.0.1:5000/dashboard'
+  const url = import.meta.env.VITE_API_DASH_URL;
     const [data,setData] = useState({
         sales_per_day:[],
         profit_per_day:[],
