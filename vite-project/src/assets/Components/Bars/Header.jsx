@@ -25,7 +25,7 @@ const Header = () => {
             </button>
 
             <div class="hidden ml-10 lg:flex lg:items-center lg:mr-auto lg:space-x-10">
-                <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600" onClick={()=>navigate("/")}>  Home </a>
+                <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600" onClick={()=>navigate("/")}> About Us</a>
 
                 <a href="#" title="" class="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600" onClick={()=>navigate("/products")}> Products </a>
 
