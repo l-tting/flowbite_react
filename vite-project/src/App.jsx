@@ -8,6 +8,7 @@ import Products from "./assets/Pages/Products";
 import Sales from "./assets/Pages/Sales";
 import Contact from "./assets/Pages/Contact";
 import NotFound from "./assets/Pages/404";
+import Footer from "./assets/Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 };

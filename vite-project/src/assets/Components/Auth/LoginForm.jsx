@@ -1,9 +1,11 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 
 const LoginForm = () => {
-    const url = "http://127.0.0.1:5000/login"
+    const navigate = useNavigate()
+    const url = import.meta.env.VITE_LOGIN_URL
     const [login,setLogin] = useState({
         user:"",
         password:"",
@@ -19,12 +21,15 @@ const LoginForm = () => {
         e.preventDefault()
         try{
             const response = await axios.post(url,login)
+            
             const token = response.data.access_token
             localStorage.setItem("access_token",token)
+            navigate('/dashboard')
             console.log("Login successfull")
         }
         catch(e){
             console.log("Error logging in:",e)
+            
         }
         
     }
